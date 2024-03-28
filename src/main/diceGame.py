@@ -12,4 +12,5 @@ class DiceGame:
         while not self.gameRules.isGameOver(self.gameState):
             self.gameState.rollDice()
             self.gameRules.applyRules(self.gameState)
-            self.scorekeeper.addScore(self.gameState.getScore())
+        
+        self.scorekeeper.addScore(self.gameState.getScore())

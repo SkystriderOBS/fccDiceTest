@@ -10,7 +10,6 @@ class ScorekeeperClass(ScoreKeeper):
             self.scores[score] += 1
         else:
             self.scores[score] = 1
-        print("Score added: " + str(self.scores[score]))
     def getScore(self, score: int) -> int:
         if score in self.scores:
             return self.scores[score]
@@ -18,11 +17,9 @@ class ScorekeeperClass(ScoreKeeper):
             return 0
         
     #write all the scores to a list of strings
-    def getScores(self) -> List[str]:
+    def getScores(self) -> List[int]:
         total = sum(self.scores.values())
-        return ["Total {} occurs {} occurred {} times".format(score, self.scores[score]/total, self.scores[score]) for score in self.scores]
-    
-    
+        return ["Total {} occurs {:.2f}% occurred {} times".format(score, (self.scores[score]/total)*100, self.scores[score]) for score in sorted(self.scores)]
 
 
     

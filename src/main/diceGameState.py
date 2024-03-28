@@ -5,7 +5,7 @@ class DiceGameState(ABC):
     def __init__(self, numDice: int, numSides: int):
         self.numDice = numDice
         self.numSides = numSides
-        self.dice = []
+        self.dice = [0] * numDice
         self.score = 0
     @abstractmethod
     def rollDice(self):
